@@ -256,7 +256,7 @@ export async function getFormattedSchemaFromLog(
 
   return {
     id: UID,
-    schema: schema,
+    schema: schema.replace(/\0/g, ""),
     creator: tx.from,
     resolver,
     time: block.timestamp,
